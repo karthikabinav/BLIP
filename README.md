@@ -119,3 +119,5 @@ The implementation of BLIP relies on resources from <a href="https://github.com/
 
 
 Related project: [LAVIS](https://github.com/salesforce/LAVIS)
+
+Related project: [LAVIS](https://github.com/salesforce/LAVIS)
