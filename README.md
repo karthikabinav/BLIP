@@ -116,3 +116,5 @@ If you find this code to be useful for your research, please consider citing.
 
 ### Acknowledgement
 The implementation of BLIP relies on resources from <a href="https://github.com/salesforce/ALBEF">ALBEF</a>, <a href="https://github.com/huggingface/transformers">Huggingface Transformers</a>, and <a href="https://github.com/rwightman/pytorch-image-models/tree/master/timm">timm</a>. We thank the original authors for their open-sourcing.
+
+Related project: [LAVIS](https://github.com/salesforce/LAVIS)
