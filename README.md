@@ -9,7 +9,7 @@
 This is the PyTorch code of the <a href="https://arxiv.org/abs/2201.12086">BLIP paper</a> [[blog](https://blog.salesforceairesearch.com/blip-bootstrapping-language-image-pretraining/)]. The code has been tested on PyTorch 1.10.
 To install the dependencies, run <pre/>pip install -r requirements.txt</pre> 
 
-Catalog:
+Catalog: 
 - [x] Inference demo
 - [x] Pre-trained and finetuned checkpoints
 - [x] Finetuning code for Image-Text Retrieval, Image Captioning, VQA, and NLVR2
