@@ -63,9 +63,7 @@ NLVR2 | <a href="https://storage.googleapis.com/sfr-vision-language-research/BLI
 2. To evaluate the finetuned BLIP model on COCO, run:
 <pre>python -m torch.distributed.run --nproc_per_node=8 train_caption.py --evaluate</pre> 
 3. To evaluate the finetuned BLIP model on NoCaps, generate results with: (evaluation needs to be performed on official server)
-<pre>python -m torch.distributed.run --nproc_per_node=8 
-
-eval_nocaps.py </pre> 
+<pre>python -m torch.distributed.run --nproc_per_node=8 eval_nocaps.py </pre> 
 4. To finetune the pre-trained checkpoint using 8 A100 GPUs, first set 'pretrained' in configs/caption_coco.yaml as "https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_capfilt_large.pth". Then run:
 <pre>python -m torch.distributed.run --nproc_per_node=8 train_caption.py </pre> 
 
