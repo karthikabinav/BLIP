@@ -1,1 +1,1 @@
-Related project: [LAVIS](https://github.com/Salesforce/LAVIS)
+Related project: [LAVIS](https://github.com/salesforce/LAVIS)
