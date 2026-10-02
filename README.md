@@ -49,13 +49,13 @@ NLVR2 | <a href="https://storage.googleapis.com/sfr-vision-language-research/BLI
 ### Image-Text Retrieval:
 1. Download COCO and Flickr30k datasets from the original websites, and set 'image_root' in configs/retrieval_{dataset}.yaml accordingly.
 2. To evaluate the finetuned BLIP model on COCO, run:
-<pre>python -m torch.distributed.run --nproc_per_node=8 train_retrieval.py \\\\
---config ./configs/retrieval_coco.yaml \\\\
---output_dir output/retrieval_coco \\\\
+<pre>python -m torch.distributed.run --nproc_per_node=8 train_retrieval.py \\\\\\\\
+--config ./configs/retrieval_coco.yaml \\\\\\\\
+--output_dir output/retrieval_coco \\\\\\\\
 --evaluate</pre> 
 3. To finetune the pre-trained checkpoint using 8 A100 GPUs, first set 'pretrained' in configs/retrieval_coco.yaml as "https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base.pth". Then run:
-<pre>python -m torch.distributed.run --nproc_per_node=8 train_retrieval.py \\\\
---config ./configs/retrieval_coco.yaml \\\\
+<pre>python -m torch.distributed.run --nproc_per_node=8 train_retrieval.py \\\\\\\\
+--config ./configs/retrieval_coco.yaml \\\\\\\\
 --output_dir output/retrieval_coco </pre> 
 
 ### Image-Text Captioning:
@@ -85,7 +85,7 @@ NLVR2 | <a href="https://storage.googleapis.com/sfr-vision-language-research/BLI
 In order to finetune a model with ViT-L, simply change the config file to set 'vit' as large. Batch size and learning rate may also need to be adjusted accordingly (please see the paper's appendix for hyper-parameter details). <a href="https://github.com/facebookresearch/fairscale">Gradient checkpoint</a> can also be activated in the config file to reduce GPU memory usage. 
 
 ### Pre-train:
-1. Prepare training json files where each json file contains a list. Each item in the list is a dictonary with two key-value pairs: {'image': path_of_image, 'caption': text_of_image}. 
+1. Prepare training json files where each json file contains a list. Each item in the list is a dictonary with two key-value pairs: 'image': path_of_image, 'caption': text_of_image. 
 2. In configs/pretrain.yaml, set 'train_file' as the paths for the json files .
 3. Pre-train the model using 8 A100 GPUs:
 <pre>python -m torch.distributed.run --nproc_per_node=8 pretrain.py --config ./configs/Pretrain.yaml --output_dir output/Pretrain </pre> 
@@ -97,7 +97,7 @@ In order to finetune a model with ViT-L, simply change the config file to set 'v
 <pre>python -m torch.distributed.run --nproc_per_node=8 eval_retrieval_video.py</pre> 
 
 ### Pre-training datasets download:
-We provide bootstrapped pre-training datasets as json files. Each json file contains a list. Each item in the list is a dictonary with two key-value pairs: {'url': url_of_image, 'caption': text_of_image}. 
+We provide bootstrapped pre-training datasets as json files. Each json file contains a list. Each item in the list is a dictonary with two key-value pairs: 'url': url_of_image, 'caption': text_of_image. 
 
 Image source | Filtered web caption | Filtered synthetic caption by ViT-B | Filtered synthetic caption by ViT-L
 --- | :---: | :---: | :---:
